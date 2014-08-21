@@ -5,6 +5,8 @@ import panels.Score;
 import panels.Settings;
 import principal.Music;
 import principal.Resources;
+import gameMechanics.Game;
+import gameMechanics.Items;
 import gameMechanics.Random;
 import gameTabs.overview.Overview;
 
@@ -15,6 +17,7 @@ import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 
@@ -110,7 +113,6 @@ public class Buttons extends JButton
 				
 				if(Random.getRandomDouble(0 , 9) < 5)
 					Overview.giveItem(Resources.getIcon(Random.getRandomInt(4)));
-				
 			}
 		});
 		

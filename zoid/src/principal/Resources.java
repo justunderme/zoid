@@ -10,6 +10,7 @@ public class Resources
 	private static double populationKids;
 	private static ImageIcon[] arrIcons = new ImageIcon[5];
 	
+	
 	public synchronized static void resourcesCheck()
 	{
 		if(food < 0)

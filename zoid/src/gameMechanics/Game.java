@@ -1,5 +1,7 @@
 package gameMechanics;
 
+import java.util.ArrayList;
+
 import gameTabs.area.Area;
 import gameTabs.jobs.Jobs;
 import gameTabs.overview.Overview;
@@ -20,6 +22,7 @@ public class Game extends JTabbedPane
 {
 	
 	public static boolean isRunning = false;
+	public static ArrayList<Items> arrItems = new ArrayList<Items>();
 	
 	public Game()
 	{

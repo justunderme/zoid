@@ -17,10 +17,10 @@ public class MainFrame
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myFrame.setLayout(new MigLayout());
 		
-		Music music = new Music();
+		/*Music music = new Music();
 		
 		music.readyMusic();
-		Music.start();
+		Music.start();*/
 		
 		JPanel mainMenu = new Menu();
 		
