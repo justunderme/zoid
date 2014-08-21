@@ -3,6 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/Rafael/Desktop/Rafael/Dropbox/Programação/git/zoid/Resources/CustomJars/miglayout-4.0-swing.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Extra/MC Mods/eclipse/git/zoid/zoid/Resources/CustomJars/miglayout-4.0-swing.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
