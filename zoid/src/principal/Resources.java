@@ -33,11 +33,11 @@ public class Resources
 	
 	public synchronized static void setIcons()
 	{
-		arrIcons[0] = new ImageIcon("C:/Users/Rafael/Desktop/Rafael/Dropbox/Programação/Zoid/webgame/Resources/Images/bluePotion.png");
-		arrIcons[1] = new ImageIcon("C:/Users/Rafael/Desktop/Rafael/Dropbox/Programação/Zoid/webgame/Resources/Images/bow.jpg");
-		arrIcons[2] = new ImageIcon("C:/Users/Rafael/Desktop/Rafael/Dropbox/Programação/Zoid/webgame/Resources/Images/greenPotion.png");
-		arrIcons[3] = new ImageIcon("C:/Users/Rafael/Desktop/Rafael/Dropbox/Programação/Zoid/webgame/Resources/Images/redPotion.png");
-		arrIcons[4] = new ImageIcon("C:/Users/Rafael/Desktop/Rafael/Dropbox/Programação/Zoid/webgame/Resources/Images/shield.png");
+		arrIcons[0] = new ImageIcon("resources/images/bluePotion.png");
+		arrIcons[1] = new ImageIcon("resources/images/bow.jpg");
+		arrIcons[2] = new ImageIcon("resources/images/greenPotion.png");
+		arrIcons[3] = new ImageIcon("resources/images/redPotion.png");
+		arrIcons[4] = new ImageIcon("resources/images/shield.png");
 	}
 	
 	public synchronized static ImageIcon getIcon(int i)

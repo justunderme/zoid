@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
+import net.miginfocom.swing.MigLayout;
 import actions.Buttons;
 
 @SuppressWarnings("serial")
@@ -19,7 +20,7 @@ public class ResourcesPanelWater extends JPanel
 	public ResourcesPanelWater() 
 	{
 		setPreferredSize(new Dimension(512 , 340));
-		setLayout(null);
+		setLayout(new MigLayout());
 		
 		titleBorder = new TitledBorder(new LineBorder(Color.BLACK), "Water");
 		
