@@ -19,8 +19,9 @@ public class Menu extends JPanel
 		
 		Buttons menuButton = new Buttons();
 		
-		this.add(menuButton.newGameButton(dimension), "gapleft 55 , gapright 55");
-		this.add(menuButton.settingsButton(dimension), "gapleft 60 , gapright 60");
-		this.add(menuButton.exitButton(dimension), "gapleft 70 , gapright 70");
+		this.add(menuButton.newGameButton(), "gapleft 55 , gapright 55");
+		this.add(menuButton.continueButton() , "gapleft 60 , gapright 60");
+		this.add(menuButton.settingsButton(), "gapleft 60 , gapright 60");
+		this.add(menuButton.exitButton(), "gapleft 70 , gapright 70");
 	}
 }
