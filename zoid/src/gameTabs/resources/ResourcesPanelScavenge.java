@@ -24,10 +24,8 @@ public class ResourcesPanelScavenge extends JPanel
 		
 		titleBorder = new TitledBorder(new LineBorder(Color.BLACK), "Scavenge");
 		
-		scavengeButton = new Buttons();
-		
 		this.setBorder(titleBorder);
-		this.add(scavengeButton.scavengeButton());
+		this.add(Buttons.scavengeButton());
 		
 	}
 

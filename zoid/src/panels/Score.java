@@ -3,6 +3,7 @@ package panels;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import actions.Buttons;
 import net.miginfocom.swing.MigLayout;
 import principal.Resources;
 
@@ -17,6 +18,8 @@ public class Score extends JPanel
 	{
 		setLayout(new MigLayout("center"));
 		
+		this.add(Buttons.backSpeedButton());
+		this.add(Buttons.forwardSpeedButton());
 		this.add(foodLabel);
 		this.add(waterLabel);
 		this.add(populationLabel);

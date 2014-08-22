@@ -24,9 +24,7 @@ public class ResourcesPanelWater extends JPanel
 		
 		titleBorder = new TitledBorder(new LineBorder(Color.BLACK), "Water");
 		
-		waterButton = new Buttons();
-		
 		this.setBorder(titleBorder);
-		this.add(waterButton.waterButton());
+		this.add(Buttons.waterButton());
 	}
 }

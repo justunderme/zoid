@@ -22,7 +22,6 @@ public class Settings extends JPanel
 		setLayout(new MigLayout("center , center , wrap"));
 		setPreferredSize(new Dimension(400 , 400));
 		
-		Buttons musicButton = new Buttons();
 		volumeLabel = new JLabel("Volume: 100");
 		
 		JButton confirm = new JButton("Confirm");
@@ -66,8 +65,8 @@ public class Settings extends JPanel
 			}
 		});
 		
-		add(musicButton.musicOnOffButton());
-		add(musicButton.soundVolume());
+		add(Buttons.musicOnOffButton());
+		add(Buttons.soundVolume());
 		add(volumeLabel);
 		add(confirm);
 		add(cancel);

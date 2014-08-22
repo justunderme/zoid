@@ -5,6 +5,7 @@ import panels.Score;
 import panels.Settings;
 import principal.Music;
 import principal.Resources;
+import gameMechanics.Game;
 import gameMechanics.Random;
 import gameTabs.overview.Overview;
 
@@ -28,11 +29,7 @@ public class Buttons extends JButton
 		setSize(dimension);
 	}
 
-	public Buttons() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public JButton newGameButton()
+	public static JButton newGameButton()
 	{
 		JButton newGameButton = new JButton("New Game");
 		
@@ -56,7 +53,7 @@ public class Buttons extends JButton
 		
 	}
 	
-	public JButton continueButton ()
+	public static JButton continueButton ()
 	{
 		JButton continueButton = new JButton("Continue");
 		
@@ -73,7 +70,7 @@ public class Buttons extends JButton
 		return continueButton;
 	}
 	
-	public JButton settingsButton()
+	public static JButton settingsButton()
 	{
 		JButton settingsButton = new JButton("Settings");
 		
@@ -98,7 +95,7 @@ public class Buttons extends JButton
 		
 	}
 	
-	public JButton exitButton()
+	public static JButton exitButton()
 	{
 		JButton exitButton = new JButton("Exit");
 		
@@ -115,7 +112,7 @@ public class Buttons extends JButton
 		
 	}
 	
-	public JButton scavengeButton()
+	public static JButton scavengeButton()
 	{
 		JButton scavengeButton = new JButton("Scavenge");
 		
@@ -134,7 +131,7 @@ public class Buttons extends JButton
 		return scavengeButton;
 	}
 	
-	public JButton foodButton()
+	public static JButton foodButton()
 	{
 		JButton foodButton = new JButton("Food");
 		
@@ -153,7 +150,7 @@ public class Buttons extends JButton
 		return foodButton;
 	}
 	
-	public JButton waterButton()
+	public static JButton waterButton()
 	{
 		JButton waterButton = new JButton("Water");
 		
@@ -171,7 +168,7 @@ public class Buttons extends JButton
 		return waterButton;
 	}
 	
-	public JButton musicOnOffButton()
+	public static JButton musicOnOffButton()
 	{
 		final JButton musicOnOff = new JButton("Music Off");
 		
@@ -196,7 +193,7 @@ public class Buttons extends JButton
 		return musicOnOff;
 	}
 	
-	public JScrollBar soundVolume()
+	public static JScrollBar soundVolume()
 	{
 		JScrollBar scrollBar = new JScrollBar(JScrollBar.HORIZONTAL);
 		scrollBar.setMinimum(-80);
@@ -215,5 +212,37 @@ public class Buttons extends JButton
 		});
 		
 		return scrollBar;
+	}
+	
+	public static JButton backSpeedButton()
+	{
+		JButton back = new JButton("-");
+		
+		back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent paramActionEvent) 
+			{
+				Game.setSpeed(-1000L);
+			}
+		});
+		
+		return back;
+	}
+	
+	public static JButton forwardSpeedButton()
+	{
+		JButton forward = new JButton("+");
+		
+		forward.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent paramActionEvent) 
+			{
+				Game.setSpeed(1000L);
+			}
+		});
+		
+		return forward;
 	}
 }

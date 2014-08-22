@@ -24,10 +24,8 @@ public class ResourcesPanelFood extends JPanel
 		
 		titleBorder = new TitledBorder(new LineBorder(Color.BLACK), "Food");
 		
-		foodButton = new Buttons();
-		
 		this.setBorder(titleBorder);
-		this.add(foodButton.foodButton());
+		this.add(Buttons.foodButton());
 	}
 
 	

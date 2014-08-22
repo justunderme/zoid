@@ -17,11 +17,9 @@ public class Menu extends JPanel
 		this.setLayout(new MigLayout("center , center , gapy 50 , wrap"));
 		//this.setPreferredSize(dimension);
 		
-		Buttons menuButton = new Buttons();
-		
-		this.add(menuButton.newGameButton(), "gapleft 55 , gapright 55");
-		this.add(menuButton.continueButton() , "gapleft 60 , gapright 60");
-		this.add(menuButton.settingsButton(), "gapleft 60 , gapright 60");
-		this.add(menuButton.exitButton(), "gapleft 70 , gapright 70");
+		this.add(Buttons.newGameButton(), "gapleft 55 , gapright 55");
+		this.add(Buttons.continueButton() , "gapleft 60 , gapright 60");
+		this.add(Buttons.settingsButton(), "gapleft 60 , gapright 60");
+		this.add(Buttons.exitButton(), "gapleft 70 , gapright 70");
 	}
 }

@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import panels.Score;
+import principal.MainFrame;
 import principal.Resources;
 
 
@@ -20,9 +21,12 @@ import principal.Resources;
 @SuppressWarnings("serial")
 public class Game extends JTabbedPane
 {
-	
 	public static boolean isRunning = false;
 	public static ArrayList<Items> arrItems = new ArrayList<Items>();
+	public static int days = 0;
+	public static int months = 0;
+	
+	private static long speedDay = 20000; //20000
 	
 	public Game()
 	{
@@ -37,11 +41,8 @@ public class Game extends JTabbedPane
 		
 		Resources.setIcons();
 		
-		Thread monthThread = new Thread(new MonthThread(), "MonthThread");
-		monthThread.start();
-		
-		Thread dayThread = new Thread(new DayThread(), "DayThread");
-		dayThread.start();
+		Thread gameThread = new Thread(new GameThread(), "GameThread");
+		gameThread.start();
 		
         this.addTab("Overview", overviewPanel);
         this.addTab("Resources", resourcesPanel);
@@ -50,60 +51,65 @@ public class Game extends JTabbedPane
         this.addTab("Trade Center", shopPanel);
         this.addTab("Research", researchPanel);
 	}
+	
+	public static void setSpeed(long speed)
+	{
+		if((Game.speedDay + speed) > 0)
+			Game.speedDay += speed;
+	}
+	
+	public static long getSpeed()
+	{
+		return Game.speedDay;
+	}
 }
 
-class MonthThread implements Runnable
+class GameThread implements Runnable
 {
-	public int monthCounter = 1;
+	private static int dayCounter = 0;
 	
 	public void run()
 	{
+		long lastTime = System.currentTimeMillis();
+
 		while(Game.isRunning)
 		{
-			Resources.addPopulationKids(Random.getRandomInt(2));
-			
-			Resources.addPopulation(Resources.getPopulationKids() * 0.25);
-			Resources.removePopulationKids(Resources.getPopulationKids() * 0.25);
-			
-			Resources.removeFood((Resources.getPopulation() * 0.2) + (Resources.getPopulationKids() * 0.1));
-			Resources.removeWater((Resources.getPopulation() * 0.4) + (Resources.getPopulationKids() * 0.2));
+			MainFrame.myFrame.setTitle(MainFrame.TITLE + "  |  " + "Month: " + Game.months + " - Day: " + Game.days + "  |  " + "SecondsPerDay: " + Game.getSpeed() / 1000);
 			
 			Resources.resourcesCheck();
 			Score.refresh();
 			
-			monthCounter++;
+			long now = System.currentTimeMillis();
+			long delta = now - lastTime;
 			
-			try {
-				Thread.sleep(600000);
-			} 
-			catch (InterruptedException e) 
+			Game.days = dayCounter;
+			
+			if(dayCounter == 31) //MONTH CYCLE
 			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Resources.addPopulationKids(Random.getRandomInt(2));
+			
+				Resources.addPopulation(Resources.getPopulationKids() * 0.25);
+				Resources.removePopulationKids(Resources.getPopulationKids() * 0.25);
+			
+				Resources.removeFood((Resources.getPopulation() * 0.2) + (Resources.getPopulationKids() * 0.1));
+				Resources.removeWater((Resources.getPopulation() * 0.4) + (Resources.getPopulationKids() * 0.2));
+				
+				Game.months++;
+				dayCounter = 0;
 			}
-		}
-	}
-}
-
-class DayThread implements Runnable
-{
-	public int dayCounter = 1;
-	
-	public void run()
-	{
-		while(Game.isRunning)
-		{
 			
-			Score.refresh();
+			if(delta > Game.getSpeed()) //DAY CYCLE
+			{
+				dayCounter++;
+				lastTime = now;
+			}
 			
-			dayCounter++;
-			
-			try {
-				Thread.sleep(20000);
+			try 
+			{
+				Thread.sleep(10);
 			} 
 			catch (InterruptedException e) 
 			{
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

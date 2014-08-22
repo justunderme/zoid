@@ -13,10 +13,11 @@ import panels.Menu;
 public class MainFrame
 {
 	public static JFrame myFrame;
+	public static final String TITLE = "Super Duper";
 	
 	public static void main(String[] args) 
 	{
-		myFrame = new JFrame("Super Duper");
+		myFrame = new JFrame(TITLE);
 		
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myFrame.setLayout(new MigLayout());
