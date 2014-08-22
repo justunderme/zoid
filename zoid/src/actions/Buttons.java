@@ -65,7 +65,8 @@ public class Buttons extends JButton
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				
+				Load.loadProperties();
+				CreateChar.startGame();
 				
 			}
 		});
