@@ -22,6 +22,7 @@ public class MainFrame
 		music.readyMusic();
 		Music.start();*/
 		
+		
 		JPanel mainMenu = new Menu();
 		
 		myFrame.add(mainMenu);

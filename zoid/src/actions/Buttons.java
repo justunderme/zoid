@@ -32,7 +32,7 @@ public class Buttons extends JButton
 		// TODO Auto-generated constructor stub
 	}
 
-	public JButton newGameButton(Dimension dimension)
+	public JButton newGameButton()
 	{
 		JButton newGameButton = new JButton("New Game");
 		
@@ -56,7 +56,23 @@ public class Buttons extends JButton
 		
 	}
 	
-	public JButton settingsButton(Dimension dimension)
+	public JButton continueButton ()
+	{
+		JButton continueButton = new JButton("Continue");
+		
+		continueButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				
+				
+			}
+		});
+		return continueButton;
+	}
+	
+	public JButton settingsButton()
 	{
 		JButton settingsButton = new JButton("Settings");
 		
@@ -81,7 +97,7 @@ public class Buttons extends JButton
 		
 	}
 	
-	public JButton exitButton(Dimension dimension)
+	public JButton exitButton()
 	{
 		JButton exitButton = new JButton("Exit");
 		
