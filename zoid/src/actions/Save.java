@@ -1,8 +1,12 @@
 package actions;
 
+import gameMechanics.Game;
+import gameMechanics.Items;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Properties;
 
 import principal.Player;
@@ -46,5 +50,32 @@ public class Save
 			e.printStackTrace();
 			System.err.println("Error: " + e.getMessage());
 		}
+	}
+	
+	public static void saveItems()
+	{
+		try
+		{  
+			FileOutputStream fout = new FileOutputStream("item.save");
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			
+			oos.write(Game.arrItems.size());
+			
+			for(Items item : Game.arrItems)
+			{ 
+				oos.writeObject(item);
+			}
+			oos.close();
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+	
+	public static void save()
+	{
+		saveProperties();
+		saveItems();
 	}
 }

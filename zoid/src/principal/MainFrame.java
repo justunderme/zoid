@@ -27,7 +27,7 @@ public class MainFrame
 			public void windowClosing(WindowEvent e) 
 			{
 				if(Player.name != null)
-					Save.saveProperties();
+					Save.save();
 				
 			}
 

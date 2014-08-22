@@ -7,8 +7,7 @@ import principal.Music;
 import principal.Resources;
 import gameMechanics.Game;
 import gameMechanics.Random;
-import gameTabs.overview.Overview;
-
+import gameTabs.resources.ResourcesPanel;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -62,7 +61,7 @@ public class Buttons extends JButton
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				Load.loadProperties();
+				Load.load();
 				CreateChar.startGame();
 				
 			}
@@ -121,9 +120,20 @@ public class Buttons extends JButton
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				int r = Random.getRandomInt(4);
 				
 				if(Random.getRandomDouble(0 , 9) < 5)
-					Overview.giveItem(Resources.getIcon(Random.getRandomInt(4)));
+				{
+					if(Game.arrItems.get(r).getParent() == null)
+					{
+						ResourcesPanel.scavengePanel.add(Game.arrItems.get(r) , "h 50! , w 50!");
+					}
+					else
+					{
+						Game.arrItems.get(r).setQuantity(1);
+						Game.arrItems.get(r).setToolTipText(Game.arrItems.get(r).getComment() + " | " + Game.arrItems.get(r).getQuantity() + " units");
+					}
+				}
 			}
 		});
 		

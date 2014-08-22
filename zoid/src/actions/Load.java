@@ -1,9 +1,12 @@
 package actions;
 
+import gameMechanics.Items;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.util.Properties;
 
 import principal.Player;
@@ -36,5 +39,30 @@ public class Load
 		Resources.setWater(Double.parseDouble(prop.getProperty("Water")));
 		Resources.setPopulation(Double.parseDouble(prop.getProperty("Population")));
 		Resources.setPopulationKids(Double.parseDouble(prop.getProperty("Kids")));
+	}
+	
+	public static void loadItems()
+	{
+		Items item = new Items();
+		
+		try
+		{
+			FileInputStream fin = new FileInputStream("item.save");
+			ObjectInputStream ois = new ObjectInputStream(fin);
+			
+			item = (Items) ois.readObject();
+			
+			ois.close();
+		}
+		catch(Exception ex)
+		{
+			   ex.printStackTrace();
+		}
+	}
+	
+	public static void load()
+	{
+		loadProperties();
+		//loadItems();
 	}
 }

@@ -13,8 +13,6 @@ import actions.Buttons;
 @SuppressWarnings("serial")
 public class ResourcesPanelScavenge extends JPanel 
 {
-	
-	public static Buttons scavengeButton;
 	private static TitledBorder titleBorder;
 	
 	public ResourcesPanelScavenge() 
@@ -26,8 +24,5 @@ public class ResourcesPanelScavenge extends JPanel
 		
 		this.setBorder(titleBorder);
 		this.add(Buttons.scavengeButton());
-		
 	}
-
-	
 }

@@ -8,7 +8,7 @@ public class Resources
 	private static double water;
 	private static double population;
 	private static double populationKids;
-	private static ImageIcon[] arrIcons = new ImageIcon[5];
+	public static ImageIcon[] arrIcons = new ImageIcon[9];
 	
 	
 	public synchronized static void resourcesCheck()
@@ -39,6 +39,10 @@ public class Resources
 		arrIcons[2] = new ImageIcon("resources/images/greenPotion.png");
 		arrIcons[3] = new ImageIcon("resources/images/redPotion.png");
 		arrIcons[4] = new ImageIcon("resources/images/shield.png");
+		arrIcons[5] = new ImageIcon("resources/images/littleBoard.jpg");
+		arrIcons[6] = new ImageIcon("resources/images/largeBoard.png");
+		arrIcons[7] = new ImageIcon("resources/images/hammer.jpg");
+		arrIcons[8] = new ImageIcon("resources/images/gas.png");
 	}
 	
 	public synchronized static ImageIcon getIcon(int i)

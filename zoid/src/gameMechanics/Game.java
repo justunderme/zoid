@@ -26,20 +26,21 @@ public class Game extends JTabbedPane
 	public static int days = 0;
 	public static int months = 0;
 	
+	public static JPanel areaPanel = new Area();
+	public static JPanel jobsPanel = new Jobs();
+	public static JPanel overviewPanel = new Overview();
+	public static JPanel researchPanel = new Research();
+	public static JPanel resourcesPanel = new ResourcesPanel();
+	public static JPanel shopPanel = new Shop();
+	
 	private static long speedDay = 20000; //20000
 	
 	public Game()
 	{
 		isRunning = true;
 		
-		JPanel areaPanel = new Area();
-		JPanel jobsPanel = new Jobs();
-		JPanel overviewPanel = new Overview();
-		JPanel researchPanel = new Research();
-		JPanel resourcesPanel = new ResourcesPanel();
-		JPanel shopPanel = new Shop();
-		
 		Resources.setIcons();
+		Items.createItems();
 		
 		Thread gameThread = new Thread(new GameThread(), "GameThread");
 		gameThread.start();
@@ -103,6 +104,8 @@ class GameThread implements Runnable
 				dayCounter++;
 				lastTime = now;
 			}
+			
+			ResourcesPanel.scavengePanel.revalidate();
 			
 			try 
 			{
