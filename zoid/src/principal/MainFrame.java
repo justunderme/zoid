@@ -22,7 +22,6 @@ public class MainFrame
 		music.readyMusic();
 		Music.start();*/
 		
-		int i = 9;
 		
 		JPanel mainMenu = new Menu();
 		
